@@ -5,7 +5,7 @@ function getUserChoice() {
     userChoice = prompt("Enter rock, paper or scissors").toLowerCase();
 
     if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
-        
+     
     } else { 
         userChoice = prompt("Invalid choice, please enter rock, paper or scissors").toLowerCase();
     }
@@ -29,22 +29,20 @@ function getComputerChoice() {
 function playRound() {
     getComputerChoice();
     getUserChoice();
-    
+    const displayChoices = " Computer played " + computerChoice + " and " + "User played " + userChoice + "."
    if (computerChoice === "rock" && userChoice === "scissors" || computerChoice === "scissors" && userChoice === "paper" || computerChoice === "paper" && userChoice === "rock") {
-        console.log("Computer wins");
-        computerScore += 1;
-        
+        console.log("Computer wins!" + displayChoices);
+        computerScore += 1;  
     } else if (computerChoice === userChoice) {
-        console.log("Draw");
+        console.log("Draw!" + displayChoices);
     } else {
-        console.log("You win");
+        console.log("You win!" + displayChoices);
         userScore += 1;
     }
 
-   console.log(computerChoice + " " + userChoice);
 }
 
-function game() {
+(function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
         console.log("Round " + (i+1) + " - Computer: " + computerScore + " vs User: " + userScore);
@@ -58,5 +56,5 @@ function game() {
     } else {
         console.log("The game is a tie");
     }
-}
+}())
 
