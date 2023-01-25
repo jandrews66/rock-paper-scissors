@@ -1,13 +1,13 @@
+function getUserChoice() { 
+    userChoice = prompt("Enter rock, paper or scissors").toLowerCase();
 
-userChoice = prompt("Enter rock, paper or scissors").toLowerCase();
-
-if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
-    
-} else { 
-    userChoice = prompt("Invalid choice, please enter rock, paper or scissors").toLowerCase();
+    if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
+        
+    } else { 
+        userChoice = prompt("Invalid choice, please enter rock, paper or scissors").toLowerCase();
+    }
+    return userChoice;
 }
-
-console.log(userChoice);
 
 function getComputerChoice() {
 
@@ -20,10 +20,13 @@ function getComputerChoice() {
     } else if (randomNumber === 3) {
         computerChoice = "scissors"
     }
-    console.log(computerChoice);
+    return computerChoice;
 }
 
-function playRound(computerChoice, userChoice) {
+function playRound() {
+    getComputerChoice();
+    getUserChoice();
+    
    if (computerChoice === "rock" && userChoice === "scissors" || computerChoice === "scissors" && userChoice === "paper" || computerChoice === "paper" && userChoice === "rock") {
         console.log("Computer wins");
     } else if (computerChoice === userChoice) {
@@ -35,4 +38,4 @@ function playRound(computerChoice, userChoice) {
    console.log(computerChoice + " " + userChoice);
 }
 
-function game
+
